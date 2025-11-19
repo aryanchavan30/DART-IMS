@@ -2,6 +2,7 @@
 from django.db import models
 from users.models import User
 from candidates.models import Candidate
+import time
 
 class Intern(models.Model):
     class InternStatus(models.TextChoices):
@@ -32,3 +33,62 @@ class Intern(models.Model):
 
     def __str__(self):
         return f"{self.user.name} - {self.status}"
+
+
+class Attendance(models.Model):
+    class AttendanceStatus(models.TextChoices):
+        PRESENT = 'Present', 'Present'
+        ABSENT = 'Absent', 'Absent'
+        HALF_DAY = 'Half Day', 'Half Day'
+        HOLIDAY = 'Holiday', 'Holiday'
+        WEEK_OFF = 'Week Off', 'Week Off'
+
+    id = models.CharField(primary_key=True, max_length=255)
+    intern = models.ForeignKey(Intern, on_delete=models.CASCADE, related_name='attendance_records')
+    date = models.DateField()
+    status = models.CharField(max_length=10, choices=AttendanceStatus.choices, default=AttendanceStatus.ABSENT)
+    marked_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='attendance_marked')
+    marked_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+    notes = models.TextField(blank=True)
+
+    class Meta:
+        unique_together = ['intern', 'date']
+        ordering = ['-date']
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.id = f"att_{int(time.time() * 1000000)}"
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.intern.user.name} - {self.date} - {self.status}"
+
+
+class AttendanceTicket(models.Model):
+    class TicketStatus(models.TextChoices):
+        PENDING = 'Pending', 'Pending'
+        APPROVED = 'Approved', 'Approved'
+        REJECTED = 'Rejected', 'Rejected'
+
+    id = models.CharField(primary_key=True, max_length=255)
+    attendance = models.ForeignKey(Attendance, on_delete=models.CASCADE, related_name='tickets')
+    intern = models.ForeignKey(Intern, on_delete=models.CASCADE, related_name='attendance_tickets')
+    reason = models.TextField()
+    status = models.CharField(max_length=10, choices=TicketStatus.choices, default=TicketStatus.PENDING)
+    requested_status = models.CharField(max_length=10, choices=Attendance.AttendanceStatus.choices)
+    reviewed_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True, related_name='reviewed_tickets')
+    review_comments = models.TextField(blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def save(self, *args, **kwargs):
+        if not self.id:
+            self.id = f"ticket_{int(time.time() * 1000000)}"
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return f"{self.intern.user.name} - {self.attendance.date} - {self.status}"

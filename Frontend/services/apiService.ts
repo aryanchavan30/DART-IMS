@@ -657,6 +657,86 @@ class ApiService {
       body: JSON.stringify({ type, data }),
     });
   }
+
+  // Attendance APIs
+  async getAttendance(params?: { intern_id?: string; month?: string; start_date?: string; end_date?: string }): Promise<any[]> {
+    const queryParams = new URLSearchParams();
+    if (params?.intern_id) queryParams.append('intern_id', params.intern_id);
+    if (params?.month) queryParams.append('month', params.month);
+    if (params?.start_date) queryParams.append('start_date', params.start_date);
+    if (params?.end_date) queryParams.append('end_date', params.end_date);
+
+    const queryString = queryParams.toString();
+    return this.requestList<any>(`/interns/attendance/${queryString ? '?' + queryString : ''}`);
+  }
+
+  async getMyAttendance(month?: string): Promise<any[]> {
+    const queryString = month ? `?month=${month}` : '';
+    return this.request<any[]>(`/interns/attendance/my_attendance/${queryString}`);
+  }
+
+  async markAttendance(date: string, status: string = 'Present', internId?: string, notes?: string): Promise<any> {
+    const body: any = { date, status };
+    if (internId) body.intern = internId;
+    if (notes) body.notes = notes;
+
+    return this.request<any>('/interns/attendance/', {
+      method: 'POST',
+      body: JSON.stringify(body),
+    });
+  }
+
+  async markTodayAttendance(): Promise<{ message: string; attendance: any }> {
+    return this.request<{ message: string; attendance: any }>('/interns/attendance/mark_today/', {
+      method: 'POST',
+    });
+  }
+
+  async updateAttendanceStatus(attendanceId: string, status: string, notes?: string): Promise<any> {
+    const body: any = { status };
+    if (notes) body.notes = notes;
+
+    return this.request<any>(`/interns/attendance/${attendanceId}/update_status/`, {
+      method: 'PATCH',
+      body: JSON.stringify(body),
+    });
+  }
+
+  // Attendance Tickets
+  async getAttendanceTickets(params?: { intern_id?: string; status?: string }): Promise<any[]> {
+    const queryParams = new URLSearchParams();
+    if (params?.intern_id) queryParams.append('intern_id', params.intern_id);
+    if (params?.status) queryParams.append('status', params.status);
+
+    const queryString = queryParams.toString();
+    return this.requestList<any>(`/interns/attendance-tickets/${queryString ? '?' + queryString : ''}`);
+  }
+
+  async getMyAttendanceTickets(): Promise<any[]> {
+    return this.request<any[]>('/interns/attendance-tickets/my_tickets/');
+  }
+
+  async getPendingAttendanceTickets(): Promise<any[]> {
+    return this.request<any[]>('/interns/attendance-tickets/pending/');
+  }
+
+  async createAttendanceTicket(attendanceId: string, reason: string, requestedStatus: string = 'Present'): Promise<any> {
+    return this.request<any>('/interns/attendance-tickets/', {
+      method: 'POST',
+      body: JSON.stringify({
+        attendance: attendanceId,
+        reason,
+        requested_status: requestedStatus,
+      }),
+    });
+  }
+
+  async reviewAttendanceTicket(ticketId: string, approved: boolean, comments?: string): Promise<{ message: string; ticket: any }> {
+    return this.request<{ message: string; ticket: any }>(`/interns/attendance-tickets/${ticketId}/review/`, {
+      method: 'POST',
+      body: JSON.stringify({ approved, comments }),
+    });
+  }
 }
 
 export const apiService = new ApiService();
