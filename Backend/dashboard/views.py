@@ -2,7 +2,7 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import status
-from django.db.models import Count, Q
+from django.db.models import Count, Q, Sum
 from candidates.models import Candidate
 from interns.models import Intern
 from users.models import User
@@ -87,9 +87,7 @@ def dashboard_stats(request):
         intern_profile = Intern.objects.filter(user=user.id).first()
         if intern_profile:
             stats['my_intern_id'] = intern_profile.id
-            stats['my_mentor'] = User.objects.filter(
-                id=intern_profile.mentor
-            ).values_list('name', flat=True).first()
+            stats['my_mentor'] = intern_profile.mentor.name if intern_profile.mentor else None
 
     # Recent activity (last 30 days)
     thirty_days_ago = datetime.now() - timedelta(days=30)
@@ -103,22 +101,26 @@ def dashboard_stats(request):
     }
 
     # Monthly stipend statistics for current year
-    current_year = datetime.now().year
-    monthly_stipends = Stipend.objects.filter(
-        created_at__year=current_year
-    ).extra(
-        select={'month': 'strftime("%m", month)'}
-    ).values('month').annotate(
-        count=Count('id'),
-        total_amount=Count('amount')
-    )
+    try:
+        from django.db.models.functions import ExtractMonth
+        current_year = datetime.now().year
+        monthly_stipends = Stipend.objects.filter(
+            created_at__year=current_year
+        ).annotate(
+            month_num=ExtractMonth('month')
+        ).values('month_num').annotate(
+            count=Count('id'),
+            total_amount=Sum('amount')
+        )
 
-    stats['monthly_stipends'] = {
-        item['month']: {
-            'count': item['count'],
-            'total_amount': float(item['total_amount']) if item['total_amount'] else 0
+        stats['monthly_stipends'] = {
+            str(item['month_num']): {
+                'count': item['count'],
+                'total_amount': float(item['total_amount']) if item['total_amount'] else 0
+            }
+            for item in monthly_stipends
         }
-        for item in monthly_stipends
-    }
+    except Exception as e:
+        stats['monthly_stipends'] = {}
 
     return Response(stats, status=status.HTTP_200_OK)
