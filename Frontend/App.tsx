@@ -23,6 +23,7 @@ import HodApprovals from './pages/HodApprovals';
 import TestNewDB from './components/TestNewDB';
 import TypeTest from './components/TypeTest';
 import Attendance from './pages/Attendance';
+import AttendanceHistory from './pages/AttendanceHistory';
 
 
 const ProtectedRoutes: React.FC = () => {
@@ -61,7 +62,7 @@ const ProtectedRoutes: React.FC = () => {
         <ReactRouterDOM.Route path="/exit" element={<ExitProcess />} />
         <ReactRouterDOM.Route path="/profile" element={<Profile />} />
         <ReactRouterDOM.Route path="/attendance" element={<Attendance />} />
-        <ReactRouterDOM.Route path="/profile" element={<Attendance />} />
+        <ReactRouterDOM.Route path="/attendance-history" element={<AttendanceHistory />} />
         <ReactRouterDOM.Route path="/test-db" element={<TestNewDB />} />
         <ReactRouterDOM.Route path="/type-test" element={<TypeTest />} />
         <ReactRouterDOM.Route path="*" element={<NotFound />} />
