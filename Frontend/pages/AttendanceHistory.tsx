@@ -381,7 +381,7 @@ const AttendanceHistory = () => {
 
                     {record?.has_pending_ticket && (
                       <div className="mt-1 text-xs text-orange-600 font-semibold">
-                        <« Ticket
+                         ğŸ« Ticket
                       </div>
                     )}
 
@@ -433,7 +433,7 @@ const AttendanceHistory = () => {
                       Date: {format(parseISO(ticket.attendance_date), 'dd MMM yyyy')}
                     </p>
                     <p className="text-sm text-gray-600">
-                      Current: <span className="font-medium text-red-600">{ticket.current_status}</span> ’
+                      Current: <span className="font-medium text-red-600">{ticket.current_status}</span> â†’
                       Requested: <span className="font-medium text-green-600">{ticket.requested_status}</span>
                     </p>
                   </div>
