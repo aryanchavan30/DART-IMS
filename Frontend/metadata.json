@@ -1,0 +1,6 @@
+{
+  "name": "Copy of Intern Management System (IMS)",
+  "description": "A comprehensive, role-based system to manage the entire intern lifecycle, from application and onboarding to stipend processing, leave, and exit. Features role-specific dashboards for Interns, HR, Mentors, and HODs, with automated workflows and approvals.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Certificate Download Test</title>
+</head>
+<body>
+    <h3>Certificate Download Test</h3>
+    <p>This is a simple test to verify that base64 PDF data URIs download correctly.</p>
+    
+    <button onclick="testCertificateDownload()">Test Certificate Download</button>
+    
+    <script>
+        function testCertificateDownload() {
+            // Sample base64 data (your actual data would be much longer)
+            const sampleBase64 = "data:application/pdf;filename=generated.pdf;base64,JVBERi0xLjMKJbrfrOAKMyAwIG9iago8PC9U";
+            
+            // Create download link
+            const link = document.createElement('a');
+            link.href = sampleBase64;
+            link.download = 'Test_Certificate.pdf';
+            
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            alert('Download should have started. Check your downloads folder.');
+        }
+    </script>
+</body>
+</html>
