@@ -1,684 +1,535 @@
-[19/Nov/2025 11:49:28] "OPTIONS /api/interns/attendance/?intern_id=i_seed_0007&month=2025-11 HTTP/1.1" 200 0
 
-(Backend) D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend>python manage.py runserver
-Watching for file changes with StatReloader
-Performing system checks...
-
+(Backend) D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend>python manage.py test interns.tests.test_attendance
+Found 29 test(s).
+Creating test database for alias 'default'...
 System check identified no issues (0 silenced).
-November 19, 2025 - 11:58:35
-Django version 5.2.7, using settings 'ims_backend.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CTRL-BREAK.
-
-WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
-For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
-[19/Nov/2025 11:58:45] "OPTIONS /api/auth/user/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:45] "OPTIONS /api/auth/user/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:45] "GET /api/auth/user/ HTTP/1.1" 200 291
-[19/Nov/2025 11:58:46] "OPTIONS /api/users/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/candidates/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/interns/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/stipends/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/departments/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "GET /api/auth/user/ HTTP/1.1" 200 291
-[19/Nov/2025 11:58:46] "OPTIONS /api/extensions/extension-requests/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/exits/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/dashboard/stats/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/interns/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/stipends/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/departments/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/extensions/extension-requests/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/exits/ HTTP/1.1" 200 0
-[19/Nov/2025 11:58:46] "OPTIONS /api/dashboard/stats/ HTTP/1.1" 200 0
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'users.models.User'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/users/ HTTP/1.1" 200 11045
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'candidates.models.Candidate'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/candidates/ HTTP/1.1" 200 12263
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'interns.models.Intern'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/interns/ HTTP/1.1" 200 9025
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'stipends.models.Stipend'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/stipends/ HTTP/1.1" 200 181134
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'departments.models.Department'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/departments/ HTTP/1.1" 200 1326
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'exits.models.ExitRequest'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/exits/ HTTP/1.1" 200 32562
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py:1671: RuntimeWarning: DateTimeField Candidate.created_at received a naive datetime (2025-10-20 11:58:46.496002) while time zone support is active.
-  warnings.warn(
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py:1671: RuntimeWarning: DateTimeField Intern.created_at received a naive datetime (2025-10-20 11:58:46.496002) while time zone support is active.
-  warnings.warn(
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'extensions.models.ExtensionRequest'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 11:58:46] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 1039
-Internal Server Error: /api/dashboard/stats/
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+======================================================================
+ERROR: test_approve_ticket_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_approve_ticket_as_hr)
+Test HR can approve ticket and attendance is updated
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 116, in dashboard_stats
-    stats['monthly_stipends'] = {
-                                ^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
-    self._fetch_all()
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 216, in __iter__
-    for row in compiler.results_iter(
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in results_iter
-    results = self.execute_sql(
-              ^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-IndexError: tuple index out of range
-[19/Nov/2025 11:58:46] "GET /api/dashboard/stats/ HTTP/1.1" 500 148018
-[19/Nov/2025 11:58:46] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:58:46] "GET /api/candidates/ HTTP/1.1" 200 12263
-[19/Nov/2025 11:58:46] "GET /api/interns/ HTTP/1.1" 200 9025
-[19/Nov/2025 11:58:46] "GET /api/stipends/ HTTP/1.1" 200 181134
-[19/Nov/2025 11:58:46] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 11:58:46] "GET /api/exits/ HTTP/1.1" 200 32562
-[19/Nov/2025 11:58:46] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 1039
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py:1671: RuntimeWarning: DateTimeField Candidate.created_at received a naive datetime (2025-10-20 11:58:46.898511) while time zone support is active.
-  warnings.warn(
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py:1671: RuntimeWarning: DateTimeField Intern.created_at received a naive datetime (2025-10-20 11:58:46.898511) while time zone support is active.
-  warnings.warn(
-Internal Server Error: /api/dashboard/stats/
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 116, in dashboard_stats
-    stats['monthly_stipends'] = {
-                                ^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
-    self._fetch_all()
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 216, in __iter__
-    for row in compiler.results_iter(
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in results_iter
-    results = self.execute_sql(
-              ^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-IndexError: tuple index out of range
-[19/Nov/2025 11:58:46] "GET /api/dashboard/stats/ HTTP/1.1" 500 148018
-[19/Nov/2025 11:58:46] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:58:47] "GET /api/candidates/ HTTP/1.1" 200 12263
-[19/Nov/2025 11:58:47] "GET /api/interns/ HTTP/1.1" 200 9025
-[19/Nov/2025 11:58:47] "GET /api/stipends/ HTTP/1.1" 200 181134
-[19/Nov/2025 11:58:47] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 11:58:47] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 1039
-[19/Nov/2025 11:58:47] "GET /api/exits/ HTTP/1.1" 200 32562
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py:1671: RuntimeWarning: DateTimeField Candidate.created_at received a naive datetime (2025-10-20 11:58:47.345838) while time zone support is active.
-  warnings.warn(
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py:1671: RuntimeWarning: DateTimeField Intern.created_at received a naive datetime (2025-10-20 11:58:47.345838) while time zone support is active.
-  warnings.warn(
-Internal Server Error: /api/dashboard/stats/
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 116, in dashboard_stats
-    stats['monthly_stipends'] = {
-                                ^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 384, in __iter__
-    self._fetch_all()
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
-    self._result_cache = list(self._iterable_class(self))
-                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 216, in __iter__
-    for row in compiler.results_iter(
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1572, in results_iter
-    results = self.execute_sql(
-              ^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
-    cursor.execute(sql, params)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
-    return super().execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
-    return self._execute_with_wrappers(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
-    return executor(sql, params, many, context)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
-    return self.cursor.execute(sql, params)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-IndexError: tuple index out of range
-[19/Nov/2025 11:58:47] "GET /api/dashboard/stats/ HTTP/1.1" 500 148018
-[19/Nov/2025 11:58:47] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:58:47] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:59:07] "GET /api/interns/ HTTP/1.1" 200 9025
-[19/Nov/2025 11:59:07] "GET /api/interns/attendance-tickets/pending/ HTTP/1.1" 200 2
-[19/Nov/2025 11:59:07] "GET /api/interns/ HTTP/1.1" 200 9025
-Not Found: /api/interns/attendance/
-[19/Nov/2025 11:59:07] "GET /api/interns/attendance/?intern_id=i_seed_0001&month=2025-11 HTTP/1.1" 404 47
-[19/Nov/2025 11:59:07] "GET /api/interns/attendance-tickets/pending/ HTTP/1.1" 200 2
-[19/Nov/2025 11:59:30] "GET /api/stipends/ HTTP/1.1" 200 181134
-[19/Nov/2025 11:59:30] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:59:30] "GET /api/interns/ HTTP/1.1" 200 9025
-[19/Nov/2025 11:59:30] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 11:59:30] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:59:30] "GET /api/interns/ HTTP/1.1" 200 9025
-[19/Nov/2025 11:59:30] "GET /api/stipends/ HTTP/1.1" 200 181134
-[19/Nov/2025 11:59:30] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 11:59:31] "GET /api/interns/ HTTP/1.1" 200 9025
-[19/Nov/2025 11:59:31] "GET /api/interns/attendance-tickets/pending/ HTTP/1.1" 200 2
-[19/Nov/2025 11:59:31] "GET /api/interns/ HTTP/1.1" 200 9025
-Not Found: /api/interns/attendance/
-[19/Nov/2025 11:59:31] "GET /api/interns/attendance/?intern_id=i_seed_0001&month=2025-11 HTTP/1.1" 404 47
-[19/Nov/2025 11:59:31] "GET /api/interns/attendance-tickets/pending/ HTTP/1.1" 200 2
-[19/Nov/2025 11:59:53] "OPTIONS /api/auth/login/ HTTP/1.1" 200 0
-[19/Nov/2025 11:59:54] "POST /api/auth/login/ HTTP/1.1" 200 820
-[19/Nov/2025 11:59:54] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 11:59:54] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:59:54] "GET /api/candidates/ HTTP/1.1" 200 727
-[19/Nov/2025 11:59:54] "GET /api/stipends/ HTTP/1.1" 200 26417
-[19/Nov/2025 11:59:54] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 11:59:55] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 544
-[19/Nov/2025 11:59:55] "GET /api/exits/ HTTP/1.1" 200 32562
-Internal Server Error: /api/dashboard/stats/
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2128, in get_prep_value
-    return int(value)
-           ^^^^^^^^^^
-TypeError: int() argument must be a string, a bytes-like object or a real number, not 'User'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 90, in dashboard_stats
-    stats['my_mentor'] = User.objects.filter(
-                         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
   File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
-    clause, _ = self._add_q(q_object, can_reuse)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
-    child_clause, needed_inner = self.build_filter(
-                                 ^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1588, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-             ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 38, in __init__
-    self.rhs = self.get_prep_lookup()
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 410, in get_prep_lookup
-    return super().get_prep_lookup()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 96, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2130, in get_prep_value
-    raise e.__class__(
-TypeError: Field 'id' expected a number but got <User: Yashwanta Chandane (yashwanta.chandane@solargroup.com)>.
-[19/Nov/2025 11:59:55] "GET /api/dashboard/stats/ HTTP/1.1" 500 173409
-[19/Nov/2025 11:59:55] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 11:59:55] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:59:55] "GET /api/candidates/ HTTP/1.1" 200 727
-[19/Nov/2025 11:59:55] "GET /api/stipends/ HTTP/1.1" 200 26417
-[19/Nov/2025 11:59:55] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 11:59:55] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 544
-[19/Nov/2025 11:59:55] "GET /api/exits/ HTTP/1.1" 200 32562
-Internal Server Error: /api/dashboard/stats/
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2128, in get_prep_value
-    return int(value)
-           ^^^^^^^^^^
-TypeError: int() argument must be a string, a bytes-like object or a real number, not 'User'
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-The above exception was the direct cause of the following exception:
-
+======================================================================
+ERROR: test_create_attendance_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_create_attendance_as_hr)
+Test HR can create attendance record
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 90, in dashboard_stats
-    stats['my_mentor'] = User.objects.filter(
-                         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
   File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
-    clause, _ = self._add_q(q_object, can_reuse)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
-    child_clause, needed_inner = self.build_filter(
-                                 ^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1588, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-             ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 38, in __init__
-    self.rhs = self.get_prep_lookup()
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 410, in get_prep_lookup
-    return super().get_prep_lookup()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 96, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2130, in get_prep_value
-    raise e.__class__(
-TypeError: Field 'id' expected a number but got <User: Yashwanta Chandane (yashwanta.chandane@solargroup.com)>.
-[19/Nov/2025 11:59:55] "GET /api/dashboard/stats/ HTTP/1.1" 500 173409
-[19/Nov/2025 11:59:55] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 11:59:55] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 11:59:55] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 11:59:55] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:00:00] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:00:00] "OPTIONS /api/candidates/c_seed_0014/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:00] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:00:00] "GET /api/candidates/c_seed_0014/ HTTP/1.1" 200 675
-[19/Nov/2025 12:00:00] "OPTIONS /api/departments/d_web/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:00] "GET /api/candidates/c_seed_0014/ HTTP/1.1" 200 675
-[19/Nov/2025 12:00:00] "GET /api/departments/d_web/ HTTP/1.1" 200 166
-[19/Nov/2025 12:00:00] "OPTIONS /api/users/18/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:00] "GET /api/departments/d_web/ HTTP/1.1" 200 166
-[19/Nov/2025 12:00:00] "GET /api/users/18/ HTTP/1.1" 200 343
-[19/Nov/2025 12:00:00] "OPTIONS /api/interns/i_seed_0014/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:00] "OPTIONS /api/interns/i_seed_0014/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:00] "GET /api/users/18/ HTTP/1.1" 200 343
-[19/Nov/2025 12:00:00] "GET /api/interns/i_seed_0014/ HTTP/1.1" 200 1193
-[19/Nov/2025 12:00:01] "GET /api/interns/i_seed_0014/ HTTP/1.1" 200 1193
-[19/Nov/2025 12:00:04] "GET /api/interns/attendance-tickets/my_tickets/ HTTP/1.1" 200 2
-[19/Nov/2025 12:00:04] "GET /api/interns/attendance/my_attendance/?month=2025-11 HTTP/1.1" 200 343
-[19/Nov/2025 12:00:04] "GET /api/interns/attendance-tickets/my_tickets/ HTTP/1.1" 200 2
-[19/Nov/2025 12:00:04] "GET /api/interns/attendance/my_attendance/?month=2025-11 HTTP/1.1" 200 343
-[19/Nov/2025 12:00:09] "OPTIONS /api/leaves/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:09] "OPTIONS /api/leaves/ HTTP/1.1" 200 0
-[19/Nov/2025 12:00:09] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:00:09] "GET /api/departments/ HTTP/1.1" 200 1326
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\pagination.py:207: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'leaves.models.LeaveRequest'> QuerySet.
-  paginator = self.django_paginator_class(queryset, page_size)
-[19/Nov/2025 12:00:09] "GET /api/leaves/ HTTP/1.1" 200 860
-[19/Nov/2025 12:00:09] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:00:09] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:00:09] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 12:00:09] "GET /api/leaves/ HTTP/1.1" 200 860
-[19/Nov/2025 12:00:10] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:00:10] "GET /api/stipends/ HTTP/1.1" 200 26417
-[19/Nov/2025 12:00:10] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:00:10] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:00:10] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 12:00:10] "GET /api/stipends/ HTTP/1.1" 200 26417
-[19/Nov/2025 12:00:10] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:00:10] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:00:10] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 12:00:11] "GET /api/interns/attendance-tickets/my_tickets/ HTTP/1.1" 200 2
-[19/Nov/2025 12:00:11] "GET /api/interns/attendance/my_attendance/?month=2025-11 HTTP/1.1" 200 343
-[19/Nov/2025 12:00:11] "GET /api/interns/attendance-tickets/my_tickets/ HTTP/1.1" 200 2
-[19/Nov/2025 12:00:11] "GET /api/interns/attendance/my_attendance/?month=2025-11 HTTP/1.1" 200 343
-[19/Nov/2025 12:00:31] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:50] "GET /api/auth/user/ HTTP/1.1" 200 321
-[19/Nov/2025 12:01:50] "GET /api/auth/user/ HTTP/1.1" 200 321
-[19/Nov/2025 12:01:50] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:50] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:50] "GET /api/candidates/ HTTP/1.1" 200 727
-[19/Nov/2025 12:01:51] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:01:51] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 12:01:51] "GET /api/stipends/ HTTP/1.1" 200 26417
-[19/Nov/2025 12:01:51] "GET /api/exits/ HTTP/1.1" 200 32562
-[19/Nov/2025 12:01:51] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 544
-Internal Server Error: /api/dashboard/stats/
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2128, in get_prep_value
-    return int(value)
-           ^^^^^^^^^^
-TypeError: int() argument must be a string, a bytes-like object or a real number, not 'User'
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-The above exception was the direct cause of the following exception:
-
+======================================================================
+ERROR: test_create_duplicate_ticket (interns.tests.test_attendance.AttendanceAPITestCase.test_create_duplicate_ticket)
+Test cannot create duplicate ticket for same attendance
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 90, in dashboard_stats
-    stats['my_mentor'] = User.objects.filter(
-                         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
   File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
-    clause, _ = self._add_q(q_object, can_reuse)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
-    child_clause, needed_inner = self.build_filter(
-                                 ^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1588, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-             ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 38, in __init__
-    self.rhs = self.get_prep_lookup()
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 410, in get_prep_lookup
-    return super().get_prep_lookup()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 96, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2130, in get_prep_value
-    raise e.__class__(
-TypeError: Field 'id' expected a number but got <User: Yashwanta Chandane (yashwanta.chandane@solargroup.com)>.
-[19/Nov/2025 12:01:51] "GET /api/dashboard/stats/ HTTP/1.1" 500 173409
-[19/Nov/2025 12:01:51] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:51] "GET /api/candidates/ HTTP/1.1" 200 727
-[19/Nov/2025 12:01:51] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:01:51] "GET /api/departments/ HTTP/1.1" 200 1326
-[19/Nov/2025 12:01:51] "GET /api/stipends/ HTTP/1.1" 200 26417
-[19/Nov/2025 12:01:51] "GET /api/exits/ HTTP/1.1" 200 32562
-[19/Nov/2025 12:01:51] "GET /api/extensions/extension-requests/ HTTP/1.1" 200 544
-Internal Server Error: /api/dashboard/stats/
-Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2128, in get_prep_value
-    return int(value)
-           ^^^^^^^^^^
-TypeError: int() argument must be a string, a bytes-like object or a real number, not 'User'
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-The above exception was the direct cause of the following exception:
-
+======================================================================
+ERROR: test_create_ticket_as_intern (interns.tests.test_attendance.AttendanceAPITestCase.test_create_ticket_as_intern)
+Test intern can create correction ticket
+----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
-    response = get_response(request)
-               ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
-    response = wrapped_callback(request, *callback_args, **callback_kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
-    return view_func(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
-    return self.dispatch(request, *args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
-    response = self.handle_exception(exc)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
-    self.raise_uncaught_exception(exc)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
-    raise exc
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
-    response = handler(request, *args, **kwargs)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\dashboard\views.py", line 90, in dashboard_stats
-    stats['my_mentor'] = User.objects.filter(
-                         ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
   File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
     return getattr(self.get_queryset(), name)(*args, **kwargs)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1493, in filter
-    return self._filter_or_exclude(False, args, kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
-    clone._filter_or_exclude_inplace(negate, args, kwargs)
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
-    self._query.add_q(Q(*args, **kwargs))
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
-    clause, _ = self._add_q(q_object, can_reuse)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
-    child_clause, needed_inner = self.build_filter(
-                                 ^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1588, in build_filter
-    condition = self.build_lookup(lookups, col, value)
-                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\sql\query.py", line 1415, in build_lookup
-    lookup = lookup_class(lhs, rhs)
-             ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 38, in __init__
-    self.rhs = self.get_prep_lookup()
-               ^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 410, in get_prep_lookup
-    return super().get_prep_lookup()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\lookups.py", line 96, in get_prep_lookup
-    return self.lhs.output_field.get_prep_value(self.rhs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\fields\__init__.py", line 2130, in get_prep_value
-    raise e.__class__(
-TypeError: Field 'id' expected a number but got <User: Yashwanta Chandane (yashwanta.chandane@solargroup.com)>.
-[19/Nov/2025 12:01:51] "GET /api/dashboard/stats/ HTTP/1.1" 500 173409
-[19/Nov/2025 12:01:51] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:01:51] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:51] "GET /api/users/ HTTP/1.1" 200 11045
-[19/Nov/2025 12:01:51] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:52] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:01:53] "GET /api/interns/attendance/my_attendance/?month=2025-11 HTTP/1.1" 200 343
-[19/Nov/2025 12:01:53] "GET /api/interns/attendance-tickets/my_tickets/ HTTP/1.1" 200 2
-[19/Nov/2025 12:01:53] "GET /api/interns/attendance/my_attendance/?month=2025-11 HTTP/1.1" 200 343
-[19/Nov/2025 12:01:53] "GET /api/interns/attendance-tickets/my_tickets/ HTTP/1.1" 200 2
-[19/Nov/2025 12:02:02] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:02:06] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:02:07] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:02:33] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:04:25] "GET /api/interns/ HTTP/1.1" 200 1245
-[19/Nov/2025 12:04:28] "GET /api/interns/ HTTP/1.1" 200 1245
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\ims_backend\settings.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-System check identified no issues (0 silenced).
-November 19, 2025 - 12:05:29
-Django version 5.2.7, using settings 'ims_backend.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CTRL-BREAK.
+======================================================================
+ERROR: test_create_ticket_for_present_attendance (interns.tests.test_attendance.AttendanceAPITestCase.test_create_ticket_for_present_attendance)
+Test cannot create ticket for already present attendance
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
-For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
-D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\ims_backend\settings.py changed, reloading.
-Watching for file changes with StatReloader
-Performing system checks...
+======================================================================
+ERROR: test_get_attendance_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_get_attendance_as_hr)
+Test HR can view all attendance records
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-System check identified no issues (0 silenced).
-November 19, 2025 - 12:05:32
-Django version 5.2.7, using settings 'ims_backend.settings'
-Starting development server at http://127.0.0.1:8000/
-Quit the server with CTRL-BREAK.
+======================================================================
+ERROR: test_get_attendance_tickets_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_get_attendance_tickets_as_hr)
+Test HR can view all tickets
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
 
-WARNING: This is a development server. Do not use it in a production setting. Use a production WSGI or ASGI server instead.
-For more information on production servers see: https://docs.djangoproject.com/en/5.2/howto/deployment/
+======================================================================
+ERROR: test_get_attendance_with_intern_filter (interns.tests.test_attendance.AttendanceAPITestCase.test_get_attendance_with_intern_filter)
+Test filtering attendance by intern_id
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_get_attendance_with_month_filter (interns.tests.test_attendance.AttendanceAPITestCase.test_get_attendance_with_month_filter)
+Test filtering attendance by month
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_get_my_attendance_as_intern (interns.tests.test_attendance.AttendanceAPITestCase.test_get_my_attendance_as_intern)
+Test intern can view their own attendance
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_get_my_attendance_with_month_filter (interns.tests.test_attendance.AttendanceAPITestCase.test_get_my_attendance_with_month_filter)
+Test filtering own attendance by month
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_get_my_tickets_as_intern (interns.tests.test_attendance.AttendanceAPITestCase.test_get_my_tickets_as_intern)
+Test intern can view their own tickets
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_get_pending_tickets_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_get_pending_tickets_as_hr)
+Test HR can view pending tickets
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_get_tickets_with_intern_filter (interns.tests.test_attendance.AttendanceAPITestCase.test_get_tickets_with_intern_filter)
+Test filtering tickets by intern_id
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_hr_cannot_mark_today (interns.tests.test_attendance.AttendanceAPITestCase.test_hr_cannot_mark_today)
+Test HR cannot use mark_today (no intern profile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_hr_cannot_use_my_attendance_endpoint (interns.tests.test_attendance.AttendanceAPITestCase.test_hr_cannot_use_my_attendance_endpoint)
+Test HR user gets empty result on my_attendance (no intern profile)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_intern_cannot_access_pending_tickets (interns.tests.test_attendance.AttendanceAPITestCase.test_intern_cannot_access_pending_tickets)
+Test intern cannot access pending tickets endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_intern_cannot_create_attendance_for_others (interns.tests.test_attendance.AttendanceAPITestCase.test_intern_cannot_create_attendance_for_others)
+Test intern cannot create attendance for other interns
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_intern_cannot_review_ticket (interns.tests.test_attendance.AttendanceAPITestCase.test_intern_cannot_review_ticket)
+Test intern cannot review tickets
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_intern_cannot_update_attendance (interns.tests.test_attendance.AttendanceAPITestCase.test_intern_cannot_update_attendance)
+Test intern cannot use update_status endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_intern_cannot_view_all_attendance (interns.tests.test_attendance.AttendanceAPITestCase.test_intern_cannot_view_all_attendance)
+Test intern cannot access general attendance endpoint
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_mark_today_already_marked (interns.tests.test_attendance.AttendanceAPITestCase.test_mark_today_already_marked)
+Test marking today when already marked
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_mark_today_as_intern (interns.tests.test_attendance.AttendanceAPITestCase.test_mark_today_as_intern)
+Test intern can mark today as present
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_reject_ticket_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_reject_ticket_as_hr)
+Test HR can reject ticket and attendance remains unchanged
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_review_already_reviewed_ticket (interns.tests.test_attendance.AttendanceAPITestCase.test_review_already_reviewed_ticket)
+Test cannot review already reviewed ticket
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_update_attendance_status_as_hr (interns.tests.test_attendance.AttendanceAPITestCase.test_update_attendance_status_as_hr)
+Test HR can update attendance status
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 60, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_attendance_id_generation (interns.tests.test_attendance.AttendanceBusinessLogicTestCase.test_attendance_id_generation)
+Test attendance ID is auto-generated correctly
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 534, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_has_pending_ticket_field (interns.tests.test_attendance.AttendanceBusinessLogicTestCase.test_has_pending_ticket_field)
+Test has_pending_ticket computed field
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 534, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+======================================================================
+ERROR: test_unique_attendance_per_day (interns.tests.test_attendance.AttendanceBusinessLogicTestCase.test_unique_attendance_per_day)
+Test only one attendance record per intern per day
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\interns\tests\test_attendance.py", line 534, in setUp
+    self.intern = Intern.objects.create(
+                  ^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\query.py", line 661, in create
+    obj = self.model(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^
+  File "D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend\.venv\Lib\site-packages\django\db\models\base.py", line 569, in __init__
+    raise TypeError(
+TypeError: Intern() got unexpected keyword arguments: 'department'
+
+----------------------------------------------------------------------
+Ran 29 tests in 54.154s
+
+FAILED (errors=29)
+Destroying test database for alias 'default'...
+
+(Backend) D:\Projects\manus\DART-IMS-V2\DART-IMS\Backend>
