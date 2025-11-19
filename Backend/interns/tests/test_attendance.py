@@ -56,11 +56,32 @@ class AttendanceAPITestCase(TestCase):
             role=User.Role.INTERN
         )
 
+        # Create candidate for first intern
+        from candidates.models import Candidate
+        self.candidate1 = Candidate.objects.create(
+            id='cand_test_001',
+            name='Test Candidate 1',
+            email='candidate1@test.com',
+            department=self.department,
+            assigned_mentor=self.mentor_user,
+            status='Selected'
+        )
+
+        # Create candidate for second intern
+        self.candidate2 = Candidate.objects.create(
+            id='cand_test_002',
+            name='Test Candidate 2',
+            email='candidate2@test.com',
+            department=self.department,
+            assigned_mentor=self.mentor_user,
+            status='Selected'
+        )
+
         # Create intern profile
         self.intern = Intern.objects.create(
             id='intern_test_001',
             user=self.intern_user,
-            department=self.department,
+            candidate=self.candidate1,
             mentor=self.mentor_user,
             status='Active',
             joining_date=timezone.now().date() - timedelta(days=30)
@@ -70,7 +91,7 @@ class AttendanceAPITestCase(TestCase):
         self.intern2 = Intern.objects.create(
             id='intern_test_002',
             user=self.intern_user2,
-            department=self.department,
+            candidate=self.candidate2,
             mentor=self.mentor_user,
             status='Active',
             joining_date=timezone.now().date() - timedelta(days=30)
@@ -531,10 +552,20 @@ class AttendanceBusinessLogicTestCase(TestCase):
             role=User.Role.INTERN
         )
 
+        # Create candidate for intern
+        from candidates.models import Candidate
+        self.candidate = Candidate.objects.create(
+            id='cand_logic_001',
+            name='Logic Candidate',
+            email='candidate.logic@test.com',
+            department=self.department,
+            status='Selected'
+        )
+
         self.intern = Intern.objects.create(
             id='intern_logic_001',
             user=self.intern_user,
-            department=self.department,
+            candidate=self.candidate,
             status='Active',
             joining_date=timezone.now().date()
         )
