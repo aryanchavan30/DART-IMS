@@ -7,8 +7,20 @@ pillow==11.3.0
 PyJWT==2.10.1
 sqlparse==0.5.3
 tzdata==2025.2
+<<<<<<< HEAD
 certifi==2025.10.5
 charset-normalizer==3.4.4
 idna==3.11
 requests==2.32.5
 urllib3==2.5.0
+=======
+python-dotenv==1.0.0
+drf-extra-fields==3.7.0
+psycopg2-binary==2.9.9
+openpyxl==3.1.2
+requests==2.31.0
+jotform==0.1.0
+reportlab==4.0.7
+celery==5.3.4
+redis==5.0.1
+>>>>>>> 9bf823e031746add7d01b982c7f32e9e2343be85
