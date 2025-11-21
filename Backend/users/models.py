@@ -34,6 +34,7 @@ class User(AbstractUser):
         HR = 'HR', 'HR'
         MENTOR = 'Mentor', 'Mentor'
         HOD = 'HOD', 'HOD'
+        ADMIN = 'Admin', 'Admin'  # Super admin with full access
 
     class Shift(models.TextChoices):
         MORNING = 'Morning', 'Morning'

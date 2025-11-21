@@ -65,8 +65,12 @@ class UserViewSet(viewsets.ModelViewSet):
         user = self.request.user
         if not user.is_authenticated:
             return User.objects.none()
-        
-        if user.role in [User.Role.HR, User.Role.HOD, User.Role.MENTOR, User.Role.INTERN]:
+
+        # Admin can see all users
+        if user.role == User.Role.ADMIN:
+            return User.objects.all()
+
+        if user.role in [User.Role.HR, User.Role.HOD, User.Role.MENTOR]:
             return User.objects.all()
         elif user.role == User.Role.INTERN:
             intern_department = user.department
@@ -84,3 +88,90 @@ class UserViewSet(viewsets.ModelViewSet):
                     models.Q(id=user.id)
                 ).distinct()
         return User.objects.filter(id=user.id)
+
+    @action(detail=False, methods=['post'])
+    def switch_role(self, request):
+        """
+        Admin-only endpoint to switch to any role for testing/management.
+        This creates a new token with the switched role context.
+        """
+        user = request.user
+        if user.role != User.Role.ADMIN:
+            return Response(
+                {'error': 'Only Admin users can switch roles'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        target_role = request.data.get('role')
+        if not target_role:
+            return Response(
+                {'error': 'Role is required'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Validate role
+        valid_roles = [choice[0] for choice in User.Role.choices]
+        if target_role not in valid_roles:
+            return Response(
+                {'error': f'Invalid role. Choose from: {valid_roles}'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+
+        # Store original role before switching
+        original_role = user.role
+
+        # Temporarily switch role
+        user.role = target_role
+        user.save()
+
+        # Generate new token with switched role
+        refresh = RefreshToken.for_user(user)
+
+        return Response({
+            'message': f'Switched from {original_role} to {target_role}',
+            'access': str(refresh.access_token),
+            'refresh': str(refresh),
+            'user': UserSerializer(user).data,
+            'original_role': original_role,
+            'current_role': target_role
+        })
+
+    @action(detail=False, methods=['post'])
+    def reset_to_admin(self, request):
+        """
+        Reset user back to Admin role.
+        """
+        user = request.user
+        if not user.is_superuser and user.role != User.Role.ADMIN:
+            # Check if user was originally an admin (stored in session or token)
+            return Response(
+                {'error': 'Only Admin users can use this endpoint'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        user.role = User.Role.ADMIN
+        user.save()
+
+        refresh = RefreshToken.for_user(user)
+
+        return Response({
+            'message': 'Reset to Admin role',
+            'access': str(refresh.access_token),
+            'refresh': str(refresh),
+            'user': UserSerializer(user).data
+        })
+
+    @action(detail=False, methods=['get'])
+    def available_roles(self, request):
+        """
+        Get list of all available roles (Admin only).
+        """
+        user = request.user
+        if user.role != User.Role.ADMIN:
+            return Response(
+                {'error': 'Only Admin users can view all roles'},
+                status=status.HTTP_403_FORBIDDEN
+            )
+
+        roles = [{'value': choice[0], 'label': choice[1]} for choice in User.Role.choices]
+        return Response({'roles': roles})

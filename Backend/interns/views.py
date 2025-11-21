@@ -29,7 +29,7 @@ class InternViewSet(viewsets.ModelViewSet):
         if not user.is_authenticated:
             return Intern.objects.none()
 
-        if user.role in [User.Role.HR, User.Role.HOD, User.Role.MENTOR]:
+        if user.role in [User.Role.HR, User.Role.HOD, User.Role.MENTOR, User.Role.ADMIN]:
             # HR, HOD, and Mentors can see all interns
             return Intern.objects.select_related(
                 'user',
@@ -160,8 +160,8 @@ class AttendanceViewSet(viewsets.ModelViewSet):
                 queryset = queryset.filter(intern=intern_profile)
             except Intern.DoesNotExist:
                 return Attendance.objects.none()
-        elif user.role in [User.Role.HR, User.Role.HOD, User.Role.MENTOR]:
-            # HR, HOD, Mentors can see all or filter by intern
+        elif user.role in [User.Role.HR, User.Role.HOD, User.Role.MENTOR, User.Role.ADMIN]:
+            # HR, HOD, Mentors, Admin can see all or filter by intern
             intern_id = self.request.query_params.get('intern_id', None)
             if intern_id:
                 queryset = queryset.filter(intern_id=intern_id)
@@ -217,8 +217,8 @@ class AttendanceViewSet(viewsets.ModelViewSet):
                     {'error': 'Intern profile not found'},
                     status=status.HTTP_404_NOT_FOUND
                 )
-        elif user.role in [User.Role.HR, User.Role.HOD]:
-            # HR/HOD can mark attendance for any intern
+        elif user.role in [User.Role.HR, User.Role.HOD, User.Role.ADMIN]:
+            # HR/HOD/Admin can mark attendance for any intern
             intern_id = request.data.get('intern')
             if not intern_id:
                 return Response(
@@ -342,7 +342,7 @@ class AttendanceViewSet(viewsets.ModelViewSet):
         Update attendance status (HR only).
         """
         user = request.user
-        if user.role not in [User.Role.HR, User.Role.HOD]:
+        if user.role not in [User.Role.HR, User.Role.HOD, User.Role.ADMIN]:
             return Response(
                 {'error': 'Only HR/HOD can update attendance status'},
                 status=status.HTTP_403_FORBIDDEN
@@ -393,8 +393,8 @@ class AttendanceTicketViewSet(viewsets.ModelViewSet):
                 queryset = queryset.filter(intern=intern_profile)
             except Intern.DoesNotExist:
                 return AttendanceTicket.objects.none()
-        elif user.role in [User.Role.HR, User.Role.HOD]:
-            # HR/HOD see all tickets or filtered
+        elif user.role in [User.Role.HR, User.Role.HOD, User.Role.ADMIN]:
+            # HR/HOD/Admin see all tickets or filtered
             ticket_status = self.request.query_params.get('status', None)
             if ticket_status:
                 queryset = queryset.filter(status=ticket_status)
@@ -472,7 +472,7 @@ class AttendanceTicketViewSet(viewsets.ModelViewSet):
         Review and approve/reject a ticket (HR/HOD only).
         """
         user = request.user
-        if user.role not in [User.Role.HR, User.Role.HOD]:
+        if user.role not in [User.Role.HR, User.Role.HOD, User.Role.ADMIN]:
             return Response(
                 {'error': 'Only HR/HOD can review tickets'},
                 status=status.HTTP_403_FORBIDDEN
@@ -548,7 +548,7 @@ class AttendanceTicketViewSet(viewsets.ModelViewSet):
         Get all pending tickets (HR/HOD only).
         """
         user = request.user
-        if user.role not in [User.Role.HR, User.Role.HOD]:
+        if user.role not in [User.Role.HR, User.Role.HOD, User.Role.ADMIN]:
             return Response(
                 {'error': 'Only HR/HOD can view pending tickets'},
                 status=status.HTTP_403_FORBIDDEN
